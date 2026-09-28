@@ -1,830 +1,211 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Portofolio Khalisa Huemaiira">
-
-    <title>Portofolio | Khalisa Huemaiira</title>
+    <title>Absensi Mahasiswa - Khalisa Huemaiira</title>
 
     <link rel="stylesheet" href="style.css">
-</head>
 
+    <!-- Library QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
 
 <body>
 
-    <!-- ==============================
-         NAVBAR
-    =============================== -->
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">ABSENSI<span>KU</span></div>
 
-    <header class="header">
-
-        <div class="logo">
-            Khalisa<span>.</span>
-        </div>
-
-        <nav class="navbar">
-
-            <a href="#home">Home</a>
-
-            <a href="#about">About</a>
-
-            <a href="#education">Education</a>
-
-            <a href="#skills">Skills</a>
-
-            <a href="#projects">Projects</a>
-
-            <a href="#contact">Contact</a>
-
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#absensi">Absensi</a>
+            <a href="#daftar">Daftar Absen</a>
         </nav>
-
     </header>
 
 
+    <!-- BERANDA -->
+    <section id="beranda" class="hero">
 
-    <!-- ==============================
-         HOME
-    =============================== -->
-
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-
-            <p class="hero-subtitle">
-                WELCOME TO MY PORTFOLIO
-            </p>
+        <div class="hero-text">
+            <p class="small-title">WEBSITE ABSENSI MAHASISWA</p>
 
             <h1>
-                Hi, I'm
-                <span>
-                    Khalisa Huemaiira.
-                </span>
+                Sistem Absensi<br>
+                <span>Mahasiswa</span>
             </h1>
 
-            <h2>
-                Web Developer | Designer | Student
-            </h2>
-
-            <p class="hero-description">
-                Saya adalah mahasiswa Teknik Informatika
-                yang memiliki ketertarikan pada dunia
-                teknologi, desain, pemrograman, dan
-                pengembangan website.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn">
-                    Lihat Proyek
-                    <span>→</span>
-                </a>
-
-                <a href="#contact" class="btn-outline">
-                    Hubungi Saya
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- FOTO PROFIL -->
-
-        <div class="hero-photo">
-
-            <div class="photo-decoration"></div>
-
-            <img
-                src="umi.jpg"
-                alt="Foto Profil Khalisa Huemaiira"
-                class="profile-img"
-            >
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         ABOUT
-    =============================== -->
-
-    <section class="about section" id="about">
-
-        <div class="section-heading">
-
             <p>
-                ABOUT ME
+                Website sederhana untuk membantu proses
+                pencatatan kehadiran mahasiswa secara digital.
             </p>
 
-            <h2>
-                Kenalan Lebih Dekat
-            </h2>
-
-        </div>
-
-
-        <div class="about-content">
-
-            <div class="about-text">
-
-                <h3>
-                    Halo, saya Khalisa 👋
-                </h3>
-
-                <p>
-                    Saya merupakan mahasiswa
-                    S1 Teknik Informatika di
-                    Universitas Jabal Ghafur.
-                </p>
-
-                <p>
-                    Saya memiliki ketertarikan
-                    terhadap teknologi informasi,
-                    pembuatan website, database,
-                    serta desain UI/UX.
-                </p>
-
-                <p>
-                    Saat ini saya terus belajar
-                    dan mengembangkan kemampuan
-                    dalam bidang pemrograman dan
-                    desain melalui berbagai tugas
-                    dan project.
-                </p>
-
-                <p>
-                    Bagi saya, setiap project adalah
-                    kesempatan untuk belajar,
-                    mencoba sesuatu yang baru,
-                    dan meningkatkan kemampuan.
-                </p>
-
-            </div>
-
-
-            <div class="about-box">
-
-                <div class="about-item">
-
-                    <h3>
-                        Mahasiswa
-                    </h3>
-
-                    <p>
-                        Teknik Informatika
-                    </p>
-
-                </div>
-
-
-                <div class="about-item">
-
-                    <h3>
-                        Fokus
-                    </h3>
-
-                    <p>
-                        Web & UI/UX
-                    </p>
-
-                </div>
-
-
-                <div class="about-item">
-
-                    <h3>
-                        Database
-                    </h3>
-
-                    <p>
-                        MySQL
-                    </p>
-
-                </div>
-
-
-                <div class="about-item">
-
-                    <h3>
-                        Design
-                    </h3>
-
-                    <p>
-                        Figma
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         EDUCATION
-    =============================== -->
-
-    <section class="education section" id="education">
-
-        <div class="section-heading">
-
-            <p>
-                EDUCATION
-            </p>
-
-            <h2>
-                Pendidikan
-            </h2>
-
-        </div>
-
-
-        <div class="education-card">
-
-            <div class="education-number">
-                01
-            </div>
-
-            <div class="education-content">
-
-                <p class="education-year">
-                    2024 - Sekarang
-                </p>
-
-                <h3>
-                    Universitas Jabal Ghafur
-                </h3>
-
-                <h4>
-                    S1 Teknik Informatika
-                </h4>
-
-                <p>
-                    Mempelajari berbagai dasar
-                    teknologi informasi seperti
-                    pemrograman, database,
-                    rekayasa perangkat lunak,
-                    sistem informasi, dan desain.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         SKILLS
-    =============================== -->
-
-    <section class="skills-section section" id="skills">
-
-        <div class="section-heading">
-
-            <p>
-                MY SKILLS
-            </p>
-
-            <h2>
-                Keahlian Saya
-            </h2>
-
-            <span>
-                Kemampuan yang sedang saya pelajari
-                dan kembangkan.
-            </span>
-
-        </div>
-
-
-        <div class="skills-container">
-
-
-            <!-- HTML -->
-
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>
-                            HTML
-                        </h3>
-
-                        <p>
-                            Web Structure
-                        </p>
-
-                    </div>
-
-                    <strong>
-                        80%
-                    </strong>
-
-                </div>
-
-                <div class="progress">
-
-                    <div class="progress-bar html"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CSS -->
-
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>
-                            CSS
-                        </h3>
-
-                        <p>
-                            Web Design
-                        </p>
-
-                    </div>
-
-                    <strong>
-                        75%
-                    </strong>
-
-                </div>
-
-                <div class="progress">
-
-                    <div class="progress-bar css"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- MYSQL -->
-
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>
-                            MySQL
-                        </h3>
-
-                        <p>
-                            Database
-                        </p>
-
-                    </div>
-
-                    <strong>
-                        70%
-                    </strong>
-
-                </div>
-
-                <div class="progress">
-
-                    <div class="progress-bar mysql"></div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- FIGMA -->
-
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>
-                            Figma
-                        </h3>
-
-                        <p>
-                            UI/UX Design
-                        </p>
-
-                    </div>
-
-                    <strong>
-                        85%
-                    </strong>
-
-                </div>
-
-                <div class="progress">
-
-                    <div class="progress-bar figma"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         SERVICES
-    =============================== -->
-
-    <section class="services section">
-
-        <div class="section-heading">
-
-            <p>
-                WHAT I CAN DO
-            </p>
-
-            <h2>
-                Kemampuan yang Saya Tawarkan
-            </h2>
-
-        </div>
-
-
-        <div class="service-container">
-
-
-            <div class="service-card">
-
-                <div class="service-number">
-                    01
-                </div>
-
-                <h3>
-                    Website Development
-                </h3>
-
-                <p>
-                    Membuat struktur dan tampilan
-                    website menggunakan HTML
-                    dan CSS.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="service-number">
-                    02
-                </div>
-
-                <h3>
-                    UI/UX Design
-                </h3>
-
-                <p>
-                    Membuat rancangan tampilan
-                    website atau aplikasi menggunakan
-                    Figma.
-                </p>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="service-number">
-                    03
-                </div>
-
-                <h3>
-                    Database
-                </h3>
-
-                <p>
-                    Membuat dan mengelola database
-                    sederhana menggunakan MySQL.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         PROJECTS
-    =============================== -->
-
-    <section class="projects-section section" id="projects">
-
-        <div class="section-heading">
-
-            <p>
-                MY PROJECTS
-            </p>
-
-            <h2>
-                Karya Saya
-            </h2>
-
-            <span>
-                Beberapa project yang pernah saya
-                kerjakan selama belajar.
-            </span>
-
-        </div>
-
-
-        <div class="projects-container">
-
-
-            <!-- PROJECT 01 -->
-
-            <div class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        01
-                    </span>
-
-                    <span class="project-type">
-                        WEBSITE
-                    </span>
-
-                </div>
-
-                <h3>
-                    Website Portofolio
-                </h3>
-
-                <p>
-                    Website portofolio pribadi yang
-                    digunakan untuk menampilkan
-                    informasi diri, keahlian,
-                    pendidikan, dan project.
-                </p>
-
-                <div class="project-tags">
-
-                    <span>
-                        HTML
-                    </span>
-
-                    <span>
-                        CSS
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 02 -->
-
-            <div class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        02
-                    </span>
-
-                    <span class="project-type">
-                        UI/UX
-                    </span>
-
-                </div>
-
-                <h3>
-                    UI/UX Mobile App
-                </h3>
-
-                <p>
-                    Membuat rancangan tampilan
-                    aplikasi mobile dengan
-                    memperhatikan struktur,
-                    warna, dan kenyamanan pengguna.
-                </p>
-
-                <div class="project-tags">
-
-                    <span>
-                        Figma
-                    </span>
-
-                    <span>
-                        UI/UX
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 03 -->
-
-            <div class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        03
-                    </span>
-
-                    <span class="project-type">
-                        DATABASE
-                    </span>
-
-                </div>
-
-                <h3>
-                    Database MySQL
-                </h3>
-
-                <p>
-                    Perancangan database sederhana
-                    untuk menyimpan dan mengelola
-                    data menggunakan MySQL.
-                </p>
-
-                <div class="project-tags">
-
-                    <span>
-                        MySQL
-                    </span>
-
-                    <span>
-                        Database
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- PROJECT 04 -->
-
-            <div class="project-card">
-
-                <div class="project-top">
-
-                    <span class="project-number">
-                        04
-                    </span>
-
-                    <span class="project-type">
-                        DESIGN
-                    </span>
-
-                </div>
-
-                <h3>
-                    Website Landing Page
-                </h3>
-
-                <p>
-                    Membuat tampilan landing page
-                    dengan struktur sederhana,
-                    bersih, dan responsif.
-                </p>
-
-                <div class="project-tags">
-
-                    <span>
-                        HTML
-                    </span>
-
-                    <span>
-                        CSS
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         CONTACT
-    =============================== -->
-
-    <section class="contact section" id="contact">
-
-        <div class="contact-content">
-
-            <div class="section-heading">
-
-                <p>
-                    GET IN TOUCH
-                </p>
-
-                <h2>
-                    Mari Terhubung!
-                </h2>
-
-            </div>
-
-            <p class="contact-description">
-
-                Punya proyek, pertanyaan, atau ingin
-                berkenalan? Jangan ragu untuk
-                menghubungi saya.
-
-            </p>
-
-
-            <div class="contact-email">
-
-                <span>
-                    EMAIL
-                </span>
-
-                <p>
-                    khalisahuemaiira100@gmail.com
-                </p>
-
-            </div>
-
-
-            <a
-                href="mailto:khalisahuemaiira100@gmail.com"
-                class="btn"
-            >
-                Kirim Email →
+            <a href="#absensi" class="button">
+                Mulai Absensi
             </a>
+        </div>
+
+        <div class="hero-card">
+            <div class="icon">✓</div>
+            <h2>Absensi Digital</h2>
+            <p>Praktis, cepat, dan mudah digunakan.</p>
+        </div>
+
+    </section>
+
+
+    <!-- DATA MAHASISWA -->
+    <section class="profile">
+
+        <h2>Data Mahasiswa</h2>
+
+        <div class="profile-container">
+
+            <div class="profile-item">
+                <span>Nama</span>
+                <strong>Khalisa Huemaiira</strong>
+            </div>
+
+            <div class="profile-item">
+                <span>NPM</span>
+                <strong>24105111110</strong>
+            </div>
+
+            <div class="profile-item">
+                <span>Program Studi</span>
+                <strong>Teknik Informatika</strong>
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- ABSENSI -->
+    <section id="absensi" class="absensi">
 
-    <!-- ==============================
-         FOOTER
-    =============================== -->
+        <div class="section-title">
+            <p>ABSENSI</p>
+            <h2>Isi Data Kehadiran</h2>
+        </div>
+
+        <div class="absensi-box">
+
+            <form id="absensiForm">
+
+                <label for="nama">Nama Mahasiswa</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama"
+                    required
+                >
+
+                <label for="npm">NPM</label>
+                <input
+                    type="text"
+                    id="npm"
+                    placeholder="Masukkan NPM"
+                    required
+                >
+
+                <label for="status">Status Kehadiran</label>
+
+                <select id="status" required>
+                    <option value="">-- Pilih Status --</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Sakit">Sakit</option>
+                </select>
+
+                <button type="submit">
+                    Simpan Absensi
+                </button>
+
+            </form>
+
+
+            <!-- QR CODE -->
+
+            <div class="qr-area">
+
+                <h3>QR Absensi</h3>
+
+                <div id="qrcode"></div>
+
+                <p>
+                    QR akan muncul setelah data disimpan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DAFTAR ABSEN -->
+
+    <section id="daftar" class="daftar">
+
+        <div class="section-title">
+            <p>DATA KEHADIRAN</p>
+            <h2>Daftar Mahasiswa</h2>
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th>Status</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelAbsensi">
+                    <!-- Data akan muncul melalui JavaScript -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <button class="hapus-btn" onclick="hapusData()">
+            Hapus Semua Data
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="footer-content">
+        <h3>ABSENSIKU</h3>
 
-            <div class="footer-logo">
+        <p>
+            Website Absensi Mahasiswa
+        </p>
 
-                Khalisa<span>.</span>
+        <p>
+            Khalisa Huemaiira • Teknik Informatika
+        </p>
 
-            </div>
-
-            <p>
-                Mahasiswa Teknik Informatika
-                | Web Developer | Designer
-            </p>
-
-            <div class="footer-line"></div>
-
-            <p class="copyright">
-                © 2026 Khalisa Huemaiira.
-                All Rights Reserved.
-            </p>
-
-        </div>
+        <p class="copyright">
+            © 2026 Khalisa Huemaiira
+        </p>
 
     </footer>
 
 
-</body>
+    <script src="script.js"></script>
 
+</body>
 </html>

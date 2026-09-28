@@ -1,85 +1,171 @@
-// =========================
-// WEBSITE PORTOFOLIO KHALISA HUEMAIIRA
-// =========================
-
-console.log("Website Portofolio Khalisa Huemaiira aktif!");
-
-
-// =========================
-// ANIMASI KARTU PROJECT
-// =========================
-
-const cards = document.querySelectorAll(".project-card");
-
-const observer = new IntersectionObserver(
-    function (entries) {
-
-        entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.2
-    }
-);
+// Mengambil data yang tersimpan
+let dataAbsensi = JSON.parse(
+    localStorage.getItem("dataAbsensi")
+) || [];
 
 
-cards.forEach(function (card) {
+// FORM ABSENSI
 
-    card.style.opacity = "0";
+const form = document.getElementById("absensiForm");
 
-    card.style.transform = "translateY(25px)";
+form.addEventListener("submit", function(event) {
 
-    card.style.transition =
-        "opacity 0.6s ease, transform 0.6s ease";
+    event.preventDefault();
 
-    observer.observe(card);
+    const nama = document.getElementById("nama").value;
+    const npm = document.getElementById("npm").value;
+    const status = document.getElementById("status").value;
 
-});
+    const waktu = new Date().toLocaleString("id-ID");
 
 
-// =========================
-// NAVBAR ACTIVE CLICK
-// =========================
+    // Data baru
 
-const navLinks = document.querySelectorAll("nav a");
+    const dataBaru = {
+        nama: nama,
+        npm: npm,
+        status: status,
+        waktu: waktu
+    };
 
-navLinks.forEach(function (link) {
 
-    link.addEventListener("click", function () {
+    dataAbsensi.push(dataBaru);
 
-        navLinks.forEach(function (item) {
-            item.style.color = "#292522";
-        });
 
-        link.style.color = "#9b7256";
+    // Simpan ke browser
 
-    });
+    localStorage.setItem(
+        "dataAbsensi",
+        JSON.stringify(dataAbsensi)
+    );
+
+
+    // Buat QR Code
+
+    buatQRCode(dataBaru);
+
+
+    // Tampilkan data
+
+    tampilkanData();
+
+
+    // Kosongkan form
+
+    form.reset();
+
+
+    alert("Absensi berhasil disimpan!");
 
 });
 
 
-// =========================
-// BUTTON PROJECT
-// =========================
+// FUNGSI QR CODE
 
-const projectButton = document.querySelector(
-    'a[href="#projects"]'
-);
+function buatQRCode(data) {
 
-if (projectButton) {
+    const qrContainer = document.getElementById("qrcode");
 
-    projectButton.addEventListener("click", function () {
+    qrContainer.innerHTML = "";
 
-        console.log("Membuka bagian proyek...");
+
+    const informasi =
+
+        "ABSENSI MAHASISWA\n" +
+
+        "Nama: " + data.nama + "\n" +
+
+        "NPM: " + data.npm + "\n" +
+
+        "Status: " + data.status + "\n" +
+
+        "Waktu: " + data.waktu;
+
+
+    new QRCode(qrContainer, {
+
+        text: informasi,
+
+        width: 180,
+
+        height: 180
 
     });
 
 }
+
+
+// MENAMPILKAN DATA
+
+function tampilkanData() {
+
+    const tabel = document.getElementById("tabelAbsensi");
+
+    tabel.innerHTML = "";
+
+
+    dataAbsensi.forEach(function(data, index) {
+
+        const row = document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>${index + 1}</td>
+
+            <td>${data.nama}</td>
+
+            <td>${data.npm}</td>
+
+            <td>${data.status}</td>
+
+            <td>${data.waktu}</td>
+
+        `;
+
+
+        tabel.appendChild(row);
+
+    });
+
+}
+
+
+// HAPUS DATA
+
+function hapusData() {
+
+    if (dataAbsensi.length === 0) {
+
+        alert("Belum ada data absensi.");
+
+        return;
+
+    }
+
+
+    const yakin = confirm(
+        "Apakah kamu yakin ingin menghapus semua data?"
+    );
+
+
+    if (yakin) {
+
+        localStorage.removeItem("dataAbsensi");
+
+        dataAbsensi = [];
+
+        tampilkanData();
+
+        document.getElementById("qrcode").innerHTML = "";
+
+        alert("Semua data berhasil dihapus.");
+
+    }
+
+}
+
+
+// Tampilkan data ketika halaman dibuka
+
+tampilkanData();
