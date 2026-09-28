@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Toko Bunga - Khalisa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="project-page">
+
+    <div class="project-detail">
+
+        <div class="project-icon">🌸</div>
+
+        <h1>Toko Bunga Khalisa</h1>
+
+        <p>
+            Pilih bunga favorit kamu dan masukkan
+            ke dalam keranjang.
+        </p>
+
+
+        <!-- PRODUK -->
+
+        <div class="produk-container">
+
+            <div class="produk">
+
+                <div class="bunga">🌹</div>
+
+                <h3>Buket Mawar</h3>
+
+                <p>Rp 50.000</p>
+
+                <button onclick="tambahKeranjang('Buket Mawar', 50000)">
+                    Tambah
+                </button>
+
+            </div>
+
+
+            <div class="produk">
+
+                <div class="bunga">🌷</div>
+
+                <h3>Buket Tulip</h3>
+
+                <p>Rp 65.000</p>
+
+                <button onclick="tambahKeranjang('Buket Tulip', 65000)">
+                    Tambah
+                </button>
+
+            </div>
+
+
+            <div class="produk">
+
+                <div class="bunga">🌻</div>
+
+                <h3>Buket Matahari</h3>
+
+                <p>Rp 45.000</p>
+
+                <button onclick="tambahKeranjang('Buket Matahari', 45000)">
+                    Tambah
+                </button>
+
+            </div>
+
+
+            <div class="produk">
+
+                <div class="bunga">💐</div>
+
+                <h3>Buket Mix</h3>
+
+                <p>Rp 75.000</p>
+
+                <button onclick="tambahKeranjang('Buket Mix', 75000)">
+                    Tambah
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- KERANJANG -->
+
+        <div class="keranjang">
+
+            <h2>🛍️ Keranjang</h2>
+
+            <div id="keranjang">
+                <p>Keranjang masih kosong.</p>
+            </div>
+
+            <h3>
+                Total:
+                Rp <span id="total">0</span>
+            </h3>
+
+            <button onclick="checkout()" class="checkout">
+                Checkout
+            </button>
+
+        </div>
+
+
+        <a href="index.html" class="project-btn">
+            ← Kembali ke Portfolio
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let keranjang = [];
+
+let total = 0;
+
+
+function tambahKeranjang(nama, harga) {
+
+    keranjang.push({
+        nama: nama,
+        harga: harga
+    });
+
+    total += harga;
+
+    tampilkanKeranjang();
+
+}
+
+
+function tampilkanKeranjang() {
+
+    const tempat =
+        document.getElementById("keranjang");
+
+    tempat.innerHTML = "";
+
+
+    keranjang.forEach(function(item, index) {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "item-keranjang";
+
+
+        div.innerHTML = `
+            <span>
+                ${item.nama}
+                <br>
+                Rp ${item.harga.toLocaleString("id-ID")}
+            </span>
+
+            <button onclick="hapusItem(${index})">
+                Hapus
+            </button>
+        `;
+
+
+        tempat.appendChild(div);
+
+    });
+
+
+    document.getElementById("total").innerText =
+        total.toLocaleString("id-ID");
+
+
+    if (keranjang.length === 0) {
+
+        tempat.innerHTML =
+            "<p>Keranjang masih kosong.</p>";
+
+    }
+
+}
+
+
+function hapusItem(index) {
+
+    total -= keranjang[index].harga;
+
+    keranjang.splice(index, 1);
+
+    tampilkanKeranjang();
+
+}
+
+
+function checkout() {
+
+    if (keranjang.length === 0) {
+
+        alert("Keranjang masih kosong!");
+
+        return;
+    }
+
+
+    alert(
+        "Terima kasih! Pesanan kamu berhasil dibuat. 💗"
+    );
+
+
+    keranjang = [];
+
+    total = 0;
+
+    tampilkanKeranjang();
+
+}
+
+</script>
+
+</body>
+</html>

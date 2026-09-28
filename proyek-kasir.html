@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aplikasi Kasir - Khalisa</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="project-page">
+
+    <div class="project-detail">
+
+        <div class="project-icon">🛒</div>
+
+        <h1>Aplikasi Kasir</h1>
+
+        <p>
+            Aplikasi kasir sederhana yang dapat menghitung
+            total harga barang secara otomatis.
+        </p>
+
+
+        <div class="kasir">
+
+            <input
+                type="text"
+                id="namaBarang"
+                placeholder="Nama barang"
+            >
+
+            <input
+                type="number"
+                id="hargaBarang"
+                placeholder="Harga barang"
+            >
+
+            <input
+                type="number"
+                id="jumlahBarang"
+                placeholder="Jumlah"
+            >
+
+            <button onclick="tambahBarang()">
+                Tambahkan
+            </button>
+
+
+            <div id="daftarBarang"></div>
+
+
+            <h2>
+                Total:
+                Rp <span id="total">0</span>
+            </h2>
+
+        </div>
+
+
+        <a href="index.html" class="project-btn">
+            ← Kembali ke Portfolio
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let total = 0;
+
+
+function tambahBarang() {
+
+    const nama =
+        document.getElementById("namaBarang").value;
+
+    const harga =
+        Number(document.getElementById("hargaBarang").value);
+
+    const jumlah =
+        Number(document.getElementById("jumlahBarang").value);
+
+
+    if (nama === "" || harga <= 0 || jumlah <= 0) {
+
+        alert("Silakan isi semua data barang!");
+
+        return;
+    }
+
+
+    const subtotal = harga * jumlah;
+
+    total = total + subtotal;
+
+
+    const daftar =
+        document.getElementById("daftarBarang");
+
+
+    const barang =
+        document.createElement("div");
+
+
+    barang.className = "barang";
+
+
+    barang.innerHTML = `
+        <b>${nama}</b>
+        <br>
+        ${jumlah} x Rp ${harga.toLocaleString("id-ID")}
+        =
+        <b>Rp ${subtotal.toLocaleString("id-ID")}</b>
+    `;
+
+
+    daftar.appendChild(barang);
+
+
+    document.getElementById("total").innerText =
+        total.toLocaleString("id-ID");
+
+
+    document.getElementById("namaBarang").value = "";
+
+    document.getElementById("hargaBarang").value = "";
+
+    document.getElementById("jumlahBarang").value = "";
+}
+
+</script>
+
+</body>
+</html>

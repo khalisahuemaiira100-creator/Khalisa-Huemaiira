@@ -1,0 +1,148 @@
+.produk-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+
+.produk {
+    padding: 20px;
+
+    background: #fff7fb;
+
+    border: 1px solid #ffd8e8;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+
+.bunga {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+
+.produk h3 {
+    color: #d9468b;
+
+    margin-bottom: 8px;
+}
+
+
+.produk p {
+    margin-bottom: 15px;
+}
+
+
+.produk button,
+.checkout {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    background: #d9468b;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.produk button:hover,
+.checkout:hover {
+    background: #b83270;
+}
+
+
+.keranjang {
+    margin: 30px auto;
+
+    padding: 25px;
+
+    max-width: 600px;
+
+    background: #fff0f7;
+
+    border-radius: 20px;
+
+    text-align: left;
+}
+
+
+.keranjang h2 {
+    color: #d9468b;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.item-keranjang {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+
+.item-keranjang button {
+    border: none;
+
+    background: #f4a4c7;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+
+
+.keranjang h3 {
+    text-align: center;
+
+    color: #d9468b;
+
+    margin: 20px 0;
+}
+
+
+.checkout {
+    display: block;
+
+    margin: auto;
+
+    padding: 12px 30px;
+}
+
+
+@media (max-width: 600px) {
+
+    .produk-container {
+        grid-template-columns: 1fr;
+    }
+
+}

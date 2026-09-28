@@ -1,0 +1,65 @@
+.kasir {
+    margin: 30px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.kasir input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+
+    border: 1px solid #f3b6d0;
+    border-radius: 10px;
+
+    outline: none;
+    font-size: 15px;
+}
+
+.kasir input:focus {
+    border-color: #d9468b;
+}
+
+.kasir button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #d9468b;
+    color: white;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.kasir button:hover {
+    background: #b83270;
+}
+
+#daftarBarang {
+    margin-top: 20px;
+}
+
+.barang {
+    background: #fff0f7;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    color: #6d4557;
+}
+
+.kasir h2 {
+    margin-top: 25px;
+
+    color: #d9468b;
+
+    text-align: center;
+}
