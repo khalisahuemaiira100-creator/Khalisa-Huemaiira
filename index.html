@@ -1,139 +1,144 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio Khalisa Huemaiira</title>
+    <title>Absensi Mahasiswa - Khalisa Huemaiira</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Library QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
     <header>
-        <nav class="navbar">
+        <div class="logo">ABSENSI<span>KU</span></div>
 
-            <div class="logo">
-                Khalisa<span>.</span>
-            </div>
-
-            <div class="nav-menu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#absensi">Absensi</a>
+            <a href="#daftar">Daftar Absen</a>
         </nav>
     </header>
 
 
-    <!-- HOME -->
-    <section id="home" class="home">
+    <!-- BERANDA -->
+    <section id="beranda" class="hero">
 
-        <div class="home-text">
-
-            <p class="hello">
-                HELLO, I'M
-            </p>
+        <div class="hero-text">
+            <p class="small-title">WEBSITE ABSENSI MAHASISWA</p>
 
             <h1>
-                Khalisa Huemaiira
+                Sistem Absensi<br>
+                <span>Mahasiswa</span>
             </h1>
 
-            <h2>
-                Mahasiswa Teknik Informatika
-            </h2>
-
             <p>
-                Saya sedang belajar dan mengembangkan kemampuan
-                di bidang teknologi, pemrograman, dan pembuatan website.
+                Website sederhana untuk membantu proses
+                pencatatan kehadiran mahasiswa secara digital.
             </p>
 
-            <div class="home-buttons">
+            <a href="#absensi" class="button">
+                Mulai Absensi
+            </a>
+        </div>
 
-                <a href="#projects" class="btn">
-                    Lihat Proyek
-                </a>
+        <div class="hero-card">
+            <div class="icon">✓</div>
+            <h2>Absensi Digital</h2>
+            <p>Praktis, cepat, dan mudah digunakan.</p>
+        </div>
 
-                <a href="#contact" class="btn-outline">
-                    Hubungi Saya
-                </a>
+    </section>
 
+
+    <!-- DATA MAHASISWA -->
+    <section class="profile">
+
+        <h2>Data Mahasiswa</h2>
+
+        <div class="profile-container">
+
+            <div class="profile-item">
+                <span>Nama</span>
+                <strong>Khalisa Huemaiira</strong>
+            </div>
+
+            <div class="profile-item">
+                <span>NPM</span>
+                <strong>24105111110</strong>
+            </div>
+
+            <div class="profile-item">
+                <span>Program Studi</span>
+                <strong>Teknik Informatika</strong>
             </div>
 
         </div>
 
+    </section>
 
-        <div class="home-photo">
 
-            <div class="photo-circle">
+    <!-- ABSENSI -->
+    <section id="absensi" class="absensi">
 
-                <img
-                    src="vscode.jpeg"
-                    alt="Foto Khalisa Huemaiira"
+        <div class="section-title">
+            <p>ABSENSI</p>
+            <h2>Isi Data Kehadiran</h2>
+        </div>
+
+        <div class="absensi-box">
+
+            <form id="absensiForm">
+
+                <label for="nama">Nama Mahasiswa</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama"
+                    required
                 >
 
-            </div>
+                <label for="npm">NPM</label>
+                <input
+                    type="text"
+                    id="npm"
+                    placeholder="Masukkan NPM"
+                    required
+                >
 
-        </div>
+                <label for="status">Status Kehadiran</label>
 
-    </section>
+                <select id="status" required>
+                    <option value="">-- Pilih Status --</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Sakit">Sakit</option>
+                </select>
+
+                <button type="submit">
+                    Simpan Absensi
+                </button>
+
+            </form>
 
 
-    <!-- ABOUT -->
-    <section id="about" class="about">
+            <!-- QR CODE -->
 
-        <div class="section-title">
+            <div class="qr-area">
 
-            <p>ABOUT ME</p>
+                <h3>QR Absensi</h3>
 
-            <h2>Tentang Saya</h2>
-
-        </div>
-
-
-        <div class="about-content">
-
-            <div class="about-text">
-
-                <h3>Halo, saya Khalisa 👋</h3>
+                <div id="qrcode"></div>
 
                 <p>
-                    Saya adalah mahasiswa Teknik Informatika
-                    yang memiliki ketertarikan pada teknologi,
-                    pemrograman, dan pengembangan website.
+                    QR akan muncul setelah data disimpan.
                 </p>
 
-                <p>
-                    Saat ini saya sedang mempelajari HTML, CSS,
-                    JavaScript serta berbagai dasar pengembangan
-                    aplikasi dan website.
-                </p>
-
-                <div class="identity">
-
-                    <p>
-                        <strong>Nama:</strong>
-                        Khalisa Huemaiira
-                    </p>
-
-                    <p>
-                        <strong>Jurusan:</strong>
-                        Teknik Informatika
-                    </p>
-
-                    <p>
-                        <strong>NPM:</strong>
-                        24105111110
-                    </p>
-
-                </div>
-
             </div>
 
         </div>
@@ -141,252 +146,66 @@
     </section>
 
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills-section">
+    <!-- DAFTAR ABSEN -->
+
+    <section id="daftar" class="daftar">
 
         <div class="section-title">
+            <p>DATA KEHADIRAN</p>
+            <h2>Daftar Mahasiswa</h2>
+        </div>
 
-            <p>MY SKILLS</p>
+        <div class="table-container">
 
-            <h2>Kemampuan Saya</h2>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>NPM</th>
+                        <th>Status</th>
+                        <th>Waktu</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelAbsensi">
+                    <!-- Data akan muncul melalui JavaScript -->
+                </tbody>
+
+            </table>
 
         </div>
 
-
-        <div class="skills-container">
-
-
-            <!-- HTML -->
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>HTML</h3>
-
-                        <p>Web Structure</p>
-
-                    </div>
-
-                    <span>80%</span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div class="skill-progress html"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- CSS -->
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>CSS</h3>
-
-                        <p>Web Design</p>
-
-                    </div>
-
-                    <span>75%</span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div class="skill-progress css"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- JAVASCRIPT -->
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>JavaScript</h3>
-
-                        <p>Web Programming</p>
-
-                    </div>
-
-                    <span>70%</span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div class="skill-progress javascript"></div>
-
-                </div>
-
-            </div>
-
-
-            <!-- UI UX -->
-            <div class="skill-card">
-
-                <div class="skill-header">
-
-                    <div>
-
-                        <h3>UI/UX</h3>
-
-                        <p>Interface Design</p>
-
-                    </div>
-
-                    <span>65%</span>
-
-                </div>
-
-                <div class="skill-bar">
-
-                    <div class="skill-progress uiux"></div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-
-        <div class="section-title">
-
-            <p>MY PROJECTS</p>
-
-            <h2>Proyek Saya</h2>
-
-        </div>
-
-
-        <div class="projects-container">
-
-
-            <!-- PROJECT 1 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    🌸
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Website Toko Bunga</h3>
-
-                    <p>
-                        Website toko bunga sederhana dengan
-                        daftar produk dan fitur keranjang.
-                    </p>
-
-                    <a
-                        href="proyek-bunga.html"
-                        class="project-btn"
-                    >
-                        Lihat Proyek →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 2 -->
-            <div class="project-card">
-
-                <div class="project-image">
-                    🛒
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Aplikasi Kasir</h3>
-
-                    <p>
-                        Aplikasi kasir sederhana untuk
-                        menghitung total harga barang.
-                    </p>
-
-                    <a
-                        href="proyek-kasir.html"
-                        class="project-btn"
-                    >
-                        Lihat Proyek →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-
-        <div class="section-title">
-
-            <p>CONTACT</p>
-
-            <h2>Hubungi Saya</h2>
-
-        </div>
-
-
-        <div class="contact-box">
-
-            <p>
-                Jika ingin menghubungi saya,
-                silakan melalui kontak berikut.
-            </p>
-
-            <div class="contact-item">
-                📧 Email: khalisahuemaiira100@gmail.com
-            </div>
-
-            <div class="contact-item">
-                📱 Instagram: @khlisa.huemaiira
-            </div>
-
-        </div>
+        <button class="hapus-btn" onclick="hapusData()">
+            Hapus Semua Data
+        </button>
 
     </section>
 
 
     <!-- FOOTER -->
+
     <footer>
 
+        <h3>ABSENSIKU</h3>
+
         <p>
-            © 2026 Khalisa Huemaiira
+            Website Absensi Mahasiswa
         </p>
 
         <p>
-            Teknik Informatika
+            Khalisa Huemaiira • Teknik Informatika
+        </p>
+
+        <p class="copyright">
+            © 2026 Khalisa Huemaiira
         </p>
 
     </footer>
 
 
-</body>
+    <script src="script.js"></script>
 
+</body>
 </html>

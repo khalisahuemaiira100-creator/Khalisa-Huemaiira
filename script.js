@@ -1,44 +1,171 @@
-const tahun = new Date().getFullYear();
+// Mengambil data yang tersimpan
+let dataAbsensi = JSON.parse(
+    localStorage.getItem("dataAbsensi")
+) || [];
 
-const footer = document.querySelector("footer p");
 
-if (footer) {
-    footer.innerHTML =
-        `© ${tahun} Khalisa Huemaiira - Teknik Informatika`;
+// FORM ABSENSI
+
+const form = document.getElementById("absensiForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const npm = document.getElementById("npm").value;
+    const status = document.getElementById("status").value;
+
+    const waktu = new Date().toLocaleString("id-ID");
+
+
+    // Data baru
+
+    const dataBaru = {
+        nama: nama,
+        npm: npm,
+        status: status,
+        waktu: waktu
+    };
+
+
+    dataAbsensi.push(dataBaru);
+
+
+    // Simpan ke browser
+
+    localStorage.setItem(
+        "dataAbsensi",
+        JSON.stringify(dataAbsensi)
+    );
+
+
+    // Buat QR Code
+
+    buatQRCode(dataBaru);
+
+
+    // Tampilkan data
+
+    tampilkanData();
+
+
+    // Kosongkan form
+
+    form.reset();
+
+
+    alert("Absensi berhasil disimpan!");
+
+});
+
+
+// FUNGSI QR CODE
+
+function buatQRCode(data) {
+
+    const qrContainer = document.getElementById("qrcode");
+
+    qrContainer.innerHTML = "";
+
+
+    const informasi =
+
+        "ABSENSI MAHASISWA\n" +
+
+        "Nama: " + data.nama + "\n" +
+
+        "NPM: " + data.npm + "\n" +
+
+        "Status: " + data.status + "\n" +
+
+        "Waktu: " + data.waktu;
+
+
+    new QRCode(qrContainer, {
+
+        text: informasi,
+
+        width: 180,
+
+        height: 180
+
+    });
+
 }
 
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-menu a");
+// MENAMPILKAN DATA
 
-window.addEventListener("scroll", function () {
+function tampilkanData() {
 
-    let current = "";
+    const tabel = document.getElementById("tabelAbsensi");
 
-    sections.forEach(function(section) {
+    tabel.innerHTML = "";
 
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.clientHeight;
 
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            current = section.getAttribute("id");
-        }
+    dataAbsensi.forEach(function(data, index) {
+
+        const row = document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>${index + 1}</td>
+
+            <td>${data.nama}</td>
+
+            <td>${data.npm}</td>
+
+            <td>${data.status}</td>
+
+            <td>${data.waktu}</td>
+
+        `;
+
+
+        tabel.appendChild(row);
 
     });
 
-    navLinks.forEach(function(link) {
+}
 
-        link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") === "#" + current
-        ) {
-            link.classList.add("active");
-        }
+// HAPUS DATA
 
-    });
+function hapusData() {
 
-});
+    if (dataAbsensi.length === 0) {
+
+        alert("Belum ada data absensi.");
+
+        return;
+
+    }
+
+
+    const yakin = confirm(
+        "Apakah kamu yakin ingin menghapus semua data?"
+    );
+
+
+    if (yakin) {
+
+        localStorage.removeItem("dataAbsensi");
+
+        dataAbsensi = [];
+
+        tampilkanData();
+
+        document.getElementById("qrcode").innerHTML = "";
+
+        alert("Semua data berhasil dihapus.");
+
+    }
+
+}
+
+
+// Tampilkan data ketika halaman dibuka
+
+tampilkanData();
